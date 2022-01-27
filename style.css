@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background: url("/img_de/dic.jpg");
+
+    background-size: cover;
+    background: center;
+    font-family: lato, sans-serif;
+    font-weight: 300;
+    position: relative;
+    min-height: 100vh;
+    color: #555;
+}
+
+.wrapper {
+    width: 80vw;
+    position: relative;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 10px 50px rgba(0,0, 0, 0.3);
+    overflow: hidden;
+}
+
+.player-0-panel,
+.player-1-panel {
+    min-width: 50%;
+    float: left;
+    min-height: 60vh;
+    padding: 10%;
+}
+
+.player-name {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.player-score {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 130px;
+}
+.active {
+    background-color: #ff800079;
+}
+.active .player-name::after {
+    content: "\2022";
+    font-size: 80px;
+    position: absolute;
+    color: rgb(13, 52, 158);
+    top: -7px;
+    right: 10px;
+}
+
+.player-current-box {
+    background-color: #EB4D4D;
+    color: #fff;
+    width: 50%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.player-current-score {
+    font-size: 30px;
+}
+
+button {
+    position: absolute;
+    min-width: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(20, 15, 15);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {font-weight: 600;}
+button:hover i {margin-right:1.2rem}
+
+button:focus {
+    outline: none;
+}
+.shake{
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+    0%{
+        transform: rotate(8deg);
+    }
+    50%{
+        transform: rotate(-8deg);
+    }
+    100%{
+        transform: rotate(8deg);
+    }
+}
+
+i {
+    color: #EB4D4D;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    line-height: 1;
+    vertical-align: text-top;
+    margin-top: -4px;
+    transition: margin 0.3s;
+}
+
+.btn-new {top: 45px;}
+.btn-roll {top: 25rem;}
+.btn-hold {top: 28rem;}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 12rem;
+    transform: translateX(-50%);
+    height: 5.5rem;
+
+}
+
+#winningScore {
+    position: relative;
+    display: flex;
+    top: 1.5rem;
+    left: 50%;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    min-width: 12rem;
+    transform: translateX(-50%);
+}
+#winningScore:focus {outline: none;}
+
+.winner {background: #0004ff79;}
+.winner .player-name {font-weight: 300; color: #00C3FF;}
+
+@media screen and (min-width: 480px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    .wrapper {
+        width: 90vw;
+        position: relative;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+    }
+
+}
